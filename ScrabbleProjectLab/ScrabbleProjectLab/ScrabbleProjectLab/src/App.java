@@ -40,4 +40,12 @@ public class App {
         tiles.add(new Tile('Y', 4));
         tiles.add(new Tile('Z', 10));
     }
+
+    public static void getNewTileSet() {
+
+    }
+
+    public static void canSpell() {
+        
+    }
 }

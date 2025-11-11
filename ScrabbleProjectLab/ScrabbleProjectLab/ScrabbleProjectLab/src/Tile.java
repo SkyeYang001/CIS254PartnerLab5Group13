@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 /**
  * Homework 13
  * Description:
@@ -91,6 +92,7 @@ public class Tile {
 
     /**
      * Adds the tile's letter to word
+     * 
      * @param word
      * @return word added with tile's letter
      */
