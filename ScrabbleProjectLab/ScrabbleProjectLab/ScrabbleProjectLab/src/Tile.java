@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * Homework 13
  * Description:
@@ -23,6 +21,12 @@ public class Tile {
     public Tile(char letter, int value) {
         this.letter = letter;
         this.value = value;
+    }
+
+
+    public Tile(Tile obj) {
+        this.letter = obj.letter;
+        this.value = obj.value;
     }
 
     /**

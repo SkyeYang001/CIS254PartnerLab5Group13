@@ -2,14 +2,20 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class App {
+    // public ArrayList<Tile> allTiles;
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to Scrabble!");
         ArrayList<Tile> tiles = new ArrayList<Tile>();
         createTiles(tiles);
-        Random rand = new Random();
-        int randomTile = rand.nextInt(26);
-        System.out.println(randomTile);
-        System.out.println(tiles.get(randomTile));
+        ArrayList<Tile> tileSet = getNewTileSet(tiles);
+        for (int i = 0; i < tileSet.size(); i++) {
+            System.out.print((Character.toLowerCase(tileSet.get(i).getLetter())));
+        }
+        System.out.println();
+        // Random rand = new Random();
+        // int randomTile = rand.nextInt(26);
+        // System.out.println(randomTile);
+        // System.out.println(tiles.get(randomTile));
     }
 
     public static void createTiles(ArrayList<Tile> tiles) {
@@ -41,8 +47,14 @@ public class App {
         tiles.add(new Tile('Z', 10));
     }
 
-    public static void getNewTileSet() {
-
+    public static ArrayList<Tile> getNewTileSet(ArrayList<Tile> allTiles) {
+        Random randomTileNumber = new Random();
+        ArrayList<Tile> Hand = new ArrayList<Tile>();
+        for(int i = 0; i < 7; i++) {
+            int randomTile = randomTileNumber.nextInt(26);
+            Hand.add(new Tile(allTiles.get(randomTile)));
+        }
+        return Hand;
     }
 
     public static void canSpell() {
