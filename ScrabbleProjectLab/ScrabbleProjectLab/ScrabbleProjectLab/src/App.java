@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class App {
     // public ArrayList<Tile> allTiles;
@@ -7,11 +8,22 @@ public class App {
         System.out.println("Welcome to Scrabble!");
         ArrayList<Tile> tiles = new ArrayList<Tile>();
         createTiles(tiles);
-        ArrayList<Tile> tileSet = getNewTileSet(tiles);
-        for (int i = 0; i < tileSet.size(); i++) {
-            System.out.print((Character.toLowerCase(tileSet.get(i).getLetter())));
-        }
-        System.out.println();
+        Scanner input = new Scanner(System.in);
+        String word;
+        String answer;
+        do { 
+            ArrayList<Tile> tileSet = getNewTileSet(tiles);
+            System.out.print("Here is your title set: ");
+            for (int i = 0; i < tileSet.size(); i++) {
+                System.out.print((Character.toLowerCase(tileSet.get(i).getLetter())));
+            }
+            System.out.println();
+            word = input.next();
+            System.out.print("Do you want to continue? (Y/N): ");
+            answer = input.next();
+        } while (answer.equalsIgnoreCase("Y"));
+        input.close();
+
         // Random rand = new Random();
         // int randomTile = rand.nextInt(26);
         // System.out.println(randomTile);
@@ -50,7 +62,7 @@ public class App {
     public static ArrayList<Tile> getNewTileSet(ArrayList<Tile> allTiles) {
         Random randomTileNumber = new Random();
         ArrayList<Tile> Hand = new ArrayList<Tile>();
-        for(int i = 0; i < 7; i++) {
+        for (int i = 0; i < 7; i++) {
             int randomTile = randomTileNumber.nextInt(26);
             Hand.add(new Tile(allTiles.get(randomTile)));
         }
@@ -58,6 +70,6 @@ public class App {
     }
 
     public static void canSpell() {
-        
+
     }
 }
