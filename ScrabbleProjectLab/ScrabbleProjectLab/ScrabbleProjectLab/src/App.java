@@ -14,6 +14,12 @@ import java.util.Scanner;
 public class App {
     // private ArrayList<Tile> allTiles;
 
+    /**
+     * Main method, User plays the Scrabble game
+     * 
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to Scrabble!");
         ArrayList<Tile> tiles = new ArrayList<Tile>();
@@ -29,20 +35,22 @@ public class App {
             }
             System.out.println();
             word = new String(input.next());
-            // if (canSpell(word, tileSet)) {
-                System.out.println("Yes can spell " + word);
-            // }
+            if (!canSpell(word, tileSet) || (word.chars().anyMatch(Character::isDigit))) {
+                System.out.println("No, cannot spell " + word);
+            } else {
+                System.out.println("Yes, can spell " + word);
+            }
             System.out.print("Do you want to continue? (Y/N): ");
             answer = input.next();
         } while (answer.equalsIgnoreCase("Y"));
         input.close();
-
-        // Random rand = new Random();
-        // int randomTile = rand.nextInt(26);
-        // System.out.println(randomTile);
-        // System.out.println(tiles.get(randomTile));
     }
 
+    /**
+     * This method creates the tiles, A-Z.
+     * 
+     * @param tiles
+     */
     public static void createTiles(ArrayList<Tile> tiles) {
         tiles.add(new Tile('A', 1));
         tiles.add(new Tile('B', 3));
@@ -72,17 +80,27 @@ public class App {
         tiles.add(new Tile('Z', 10));
     }
 
+    /**
+     * This method creates set of tiles, 7 tiles for the user to use.
+     * 
+     * @param allTiles
+     * @return Hand (the set of tiles)
+     */
     public static ArrayList<Tile> getNewTileSet(ArrayList<Tile> allTiles) {
         Random randomTileNumber = new Random();
         ArrayList<Tile> Hand = new ArrayList<Tile>();
         for (int i = 0; i < 7; i++) {
             int randomTile = randomTileNumber.nextInt(26);
-            // Hand.add(new Tile(allTiles.get(randomTile)));
             Hand.add(new Tile(allTiles.get(randomTile)));
         }
         return Hand;
     }
 
+    /**
+     * @param word
+     * @param tileSet
+     * @return
+     */
     public static Boolean canSpell(String word, ArrayList<Tile> tileSet) {
         return true;
     }

@@ -1,11 +1,11 @@
 /**
- * Homework 13
+ * Lab 5
  * Description:
  * Tile class, creates a tile assigned to the called letter with their
  * containing their direct value scores.
  * 
  * @author Skye Yang
- * @since 11/06/2025
+ * @since 11/1/2025
  */
 
 public class Tile {
