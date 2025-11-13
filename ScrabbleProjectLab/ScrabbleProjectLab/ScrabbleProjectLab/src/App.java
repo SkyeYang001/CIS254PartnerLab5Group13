@@ -1,9 +1,19 @@
+
+/**
+ * Lab 5
+ * Description: Scrabble game, the user is shown a set of random letters and spells a word out of the letters.
+ * 
+ * @author Skye Yang
+ * @author Servando Lozoya
+ * @since 11/1/2025
+ */
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class App {
-    // public ArrayList<Tile> allTiles;
+    // private ArrayList<Tile> allTiles;
+
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to Scrabble!");
         ArrayList<Tile> tiles = new ArrayList<Tile>();
@@ -11,14 +21,17 @@ public class App {
         Scanner input = new Scanner(System.in);
         String word;
         String answer;
-        do { 
+        do {
             ArrayList<Tile> tileSet = getNewTileSet(tiles);
             System.out.print("Here is your title set: ");
             for (int i = 0; i < tileSet.size(); i++) {
                 System.out.print((Character.toLowerCase(tileSet.get(i).getLetter())));
             }
             System.out.println();
-            word = input.next();
+            word = new String(input.next());
+            // if (canSpell(word, tileSet)) {
+                System.out.println("Yes can spell " + word);
+            // }
             System.out.print("Do you want to continue? (Y/N): ");
             answer = input.next();
         } while (answer.equalsIgnoreCase("Y"));
@@ -64,12 +77,13 @@ public class App {
         ArrayList<Tile> Hand = new ArrayList<Tile>();
         for (int i = 0; i < 7; i++) {
             int randomTile = randomTileNumber.nextInt(26);
+            // Hand.add(new Tile(allTiles.get(randomTile)));
             Hand.add(new Tile(allTiles.get(randomTile)));
         }
         return Hand;
     }
 
-    public static void canSpell() {
-
+    public static Boolean canSpell(String word, ArrayList<Tile> tileSet) {
+        return true;
     }
 }

@@ -23,14 +23,18 @@ public class Tile {
         this.value = value;
     }
 
-
+    /**
+     * This method creates the objects tile letter and value
+     * 
+     * @param obj
+     */
     public Tile(Tile obj) {
         this.letter = obj.letter;
         this.value = obj.value;
     }
 
     /**
-     * Sets tile letter
+     * This method sets tile letter with the value argument
      * 
      * @param letter
      */
@@ -39,7 +43,7 @@ public class Tile {
     }
 
     /**
-     * Sets tile value
+     * This method sets tile value with the value argument
      * 
      * @param value
      */
@@ -48,7 +52,7 @@ public class Tile {
     }
 
     /**
-     * Gets tile letter
+     * This method gets tile letter
      * 
      * @return tile's letter
      */
@@ -57,7 +61,7 @@ public class Tile {
     }
 
     /**
-     * Gets value
+     * This method gets tile value
      * 
      * @return tile's value
      */
@@ -66,7 +70,7 @@ public class Tile {
     }
 
     /**
-     * if tile equals to another tile
+     * If tile equals to another tile
      * 
      * @param other
      * @return true, if both tiles are equal
