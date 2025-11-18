@@ -5,7 +5,8 @@
  * containing their direct value scores.
  * 
  * @author Skye Yang
- * @since 11/1/2025
+ * @author Servando Lozoya
+ * @since 11/18/2025
  */
 
 public class Tile {
